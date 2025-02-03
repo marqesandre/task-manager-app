@@ -1,0 +1,34 @@
+// Quasar SCSS (& Sass) Variables
+// --------------------------------------------------
+
+// Cores principais
+$primary   : #1976D2;
+$secondary : #26A69A;
+$accent    : #9C27B0;
+
+// Cores de estado
+$positive  : #21BA45;
+$negative  : #C10015;
+$info      : #31CCEC;
+$warning   : #F2C037;
+
+// Cores de fundo
+$dark      : #1D1D1D;
+$dark-page : #121212;
+
+// Breakpoints
+$breakpoint-xs: 599px !default;
+$breakpoint-sm: 1023px !default;
+$breakpoint-md: 1439px !default;
+$breakpoint-lg: 1919px !default;
+
+// Tipografia
+$typography-font-family : 'Roboto', -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+
+// Border radius
+$generic-border-radius : 4px !default;
+$button-border-radius  : 8px !default;
+
+// Transições
+$generic-transition-duration : 0.3s !default;
+$button-transition-duration : 0.2s !default; 

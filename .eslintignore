@@ -1,0 +1,7 @@
+/dist
+/node_modules
+.quasar
+/src-cordova
+/*.js
+/src-pwa
+/public 
