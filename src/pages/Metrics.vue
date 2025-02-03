@@ -1,5 +1,5 @@
 <template>
-  <q-page padding>
+  <q-page padding class="scrollable-content">
     <div v-if="!authStore.isInWhitelist" class="text-center q-pa-lg">
       <q-icon name="lock" size="48px" color="negative" />
       <h4 class="text-h5 q-mt-md text-negative">Acesso Restrito</h4>
@@ -183,4 +183,4 @@ onMounted(async () => {
     opacity: 0.8;
   }
 }
-</style> 
+</style>

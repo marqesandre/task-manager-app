@@ -1,5 +1,5 @@
 <template>
-  <q-page padding>
+  <q-page padding class="task-list-page">
     <div class="row q-mb-md items-center">
       <div class="col-12 col-sm-8">
         <h4 class="text-h5 q-my-none">Minhas Tarefas</h4>
@@ -14,7 +14,7 @@
       </div>
     </div>
 
-    <div class="row q-col-gutter-md">
+    <div class="row q-col-gutter-md scrollable-content">
       <div class="col-12">
         <q-card flat bordered>
           <q-card-section>
@@ -30,7 +30,7 @@
               </template>
             </q-input>
 
-            <q-list separator>
+            <q-list separator class="task-list">
               <q-item
                 v-for="task in filteredTasks"
                 :key="task.id"
@@ -324,4 +324,17 @@ onMounted(async () => {
   text-decoration: line-through;
   color: $grey-7;
 }
-</style> 
+
+.scrollable-content {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.task-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: 1px solid $grey-4;
+  border-radius: 4px;
+}
+</style>

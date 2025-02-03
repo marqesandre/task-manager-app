@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="lHh Lpr lFf" class="main-layout">
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
         <q-btn
@@ -50,6 +50,7 @@
       bordered
       :width="200"
       :breakpoint="500"
+      :style="{ backgroundColor: $q.dark.isActive ? '#1D1D1D' : '#f5f5f5' }"
     >
       <q-list>
         <q-item-label header>Menu</q-item-label>
@@ -96,13 +97,16 @@
 
     <q-page-container>
       <router-view v-slot="{ Component }">
-        <transition
-          appear
-          enter-active-class="animated fadeIn"
-          leave-active-class="animated fadeOut"
-        >
-          <component :is="Component" />
-        </transition>
+        <suspense>
+          <template #default>
+            <component :is="Component" />
+          </template>
+          <template #fallback>
+            <div class="row justify-center items-center" style="height: 100vh">
+              <q-spinner size="3em" color="primary" />
+            </div>
+          </template>
+        </suspense>
       </router-view>
     </q-page-container>
   </q-layout>
@@ -133,13 +137,33 @@ const navigateToProfile = () => {
   router.push('/profile')
 }
 
-const logout = async () => {
-  authStore.logout()
-  router.push('/auth/login')
+async function logout() {
+  try {
+    authStore.logout()
+  } catch (error) {
+    console.error('Erro ao fazer logout:', error)
+  }
 }
 </script>
 
 <style lang="scss">
+.main-layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.q-page-container {
+  flex: 1;
+  overflow: hidden;
+}
+
+.q-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .q-drawer {
   background-color: $grey-1;
   .q-dark & {
@@ -156,4 +180,4 @@ const logout = async () => {
 .page-leave-to {
   opacity: 0;
 }
-</style> 
+</style>

@@ -57,7 +57,6 @@ const routes = [
       }
     ]
   },
-  // Rota para capturar caminhos não encontrados
   {
     path: '/:catchAll(.*)*',
     component: () => import('../pages/Error404.vue')
@@ -85,4 +84,4 @@ router.beforeEach((to, from, next) => {
   }
 })
 
-export default router 
+export default router

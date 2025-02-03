@@ -1,13 +1,11 @@
 <template>
-  <router-view v-slot="{ Component }">
-    <transition
-      appear
-      enter-active-class="animated fadeIn"
-      leave-active-class="animated fadeOut"
-    >
-      <component :is="Component" />
-    </transition>
-  </router-view>
+  <transition
+    appear
+    enter-active-class="animated fadeIn"
+    leave-active-class="animated fadeOut"
+  >
+    <router-view />
+  </transition>
 </template>
 
 <script setup>
@@ -19,10 +17,7 @@ const $q = useQuasar()
 const authStore = useAuthStore()
 
 onMounted(() => {
-  // Inicializa o estado de autenticação
   authStore.initializeAuth()
-  
-  // Configura o tema escuro baseado na preferência do sistema
   $q.dark.set('auto')
 })
 </script>
@@ -30,7 +25,6 @@ onMounted(() => {
 <style lang="scss">
 @import './css/app.scss';
 
-// Animações globais
 .animated {
   animation-duration: 0.3s;
   animation-fill-mode: both;
@@ -61,4 +55,4 @@ onMounted(() => {
 .fadeOut {
   animation-name: fadeOut;
 }
-</style> 
+</style>

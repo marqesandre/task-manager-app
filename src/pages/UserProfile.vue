@@ -1,5 +1,5 @@
 <template>
-  <q-page padding>
+  <q-page padding class="scrollable-content">
     <div class="row q-col-gutter-md">
       <div class="col-12 col-md-6 offset-md-3">
         <q-card>
@@ -141,4 +141,4 @@ const onSubmit = async () => {
   max-width: 800px;
   margin: 0 auto;
 }
-</style> 
+</style>
