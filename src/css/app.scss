@@ -1,0 +1,105 @@
+$primary: #1976D2;
+$secondary: #26A69A;
+$accent: #9C27B0;
+$dark: #1D1D1D;
+$positive: #21BA45;
+$negative: #C10015;
+$info: #31CCEC;
+$warning: #F2C037;
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+.q-layout {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.q-page-container {
+  height: 100%;
+  overflow: hidden;
+}
+
+.q-page {
+  height: 100%;
+  overflow: hidden;
+}
+
+.scrollable-content {
+  overflow-y: auto;
+  height: 100%;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.body--dark {
+  .q-card {
+    background: $dark;
+  }
+
+  .q-input {
+    .q-field__native {
+      color: white;
+    }
+  }
+}
+
+:focus {
+  outline: 2px solid $primary;
+  outline-offset: 2px;
+}
+
+@media (max-width: 599px) {
+  .q-page-container {
+    padding: 12px;
+  }
+
+  .q-dialog__inner {
+    padding: 12px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.body--dark {
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
