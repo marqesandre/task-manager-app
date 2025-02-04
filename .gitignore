@@ -1,1 +1,50 @@
-node_modules
+# Dependencies
+/node_modules
+.pnp
+.pnp.js
+
+# Build outputs
+/dist
+/.quasar
+/src-cordova
+/src-pwa
+
+# Testing
+/coverage
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+.cache
+.temp
+
+# Quasar specific
+/src-capacitor
+/src-electron
+

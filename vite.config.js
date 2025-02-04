@@ -3,15 +3,12 @@ import vue from '@vitejs/plugin-vue'
 import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
 import path from 'path'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue({
       template: { transformAssetUrls }
     }),
-    quasar({
-      sassVariables: 'src/css/quasar.variables.scss'
-    })
+    quasar()
   ],
   resolve: {
     alias: {
@@ -20,5 +17,10 @@ export default defineConfig({
   },
   server: {
     port: 9000
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./vitest.setup.js']
   }
-}) 
+})
